@@ -33,7 +33,7 @@
 
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;However I have noticed that we cannot able to see some nodes because they are too small. To reduce noise, I grouped countries with 15 or fewer athletes into a collective “Other Countries” node. 
+&nbsp;&nbsp;&nbsp;&nbsp;However, I have noticed that we cannot able to see some nodes because they are too small. To reduce noise, I grouped countries with 15 or fewer athletes into a collective “Other Countries” node. 
 
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
