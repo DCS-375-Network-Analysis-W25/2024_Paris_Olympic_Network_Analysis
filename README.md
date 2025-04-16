@@ -111,4 +111,5 @@ Luke, Douglas A. *A User’s Guide to Network Analysis in R*. Springer, 2015.
 
 piterfm. *Paris 2024 Olympic Summer Games*. Kaggle, 2023, https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games.
 
+Giliberti, Francesco. *Unveiling the Numbers: Fascinating Data Insights from the 2024 Olympics*. Springer, 2024, https://medium.com/@gilipalo/unveiling-the-numbers-fascinating-data-insights-from-the-2024-olympics-d839060db060. 
 
