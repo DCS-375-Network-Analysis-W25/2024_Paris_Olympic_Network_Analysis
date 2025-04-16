@@ -48,7 +48,14 @@ However I have noticed that we cannot able to see some nodes because they are to
 
 **Observations**: I observed that There are many participants in Athletics and Swimmings from many countries. We also see that there are many participants from the countries like US, France, China, Australia, Japan, and Spain. I have also found that there are many countries that have only sent 15 or less athletes because "Other Countries" node is thick. 
 
-2. **Bipartite Participation Network of Bottom 20 Countries**  
+2. **Barplots of Athlete Representation by Country**  
+I used `ggplot2` to create horizontal bar plots showing the number of athletes from each country. One plot showed the top 20 countries by participation, while another showed the bottom 20. These visualizations provided context for understanding the structure of the collaboration networks and guided decisions about which countries to highlight or combine in later graphs.
+
+![Histogram of "horse"](num_athletes_vs_top_country.png)
+
+![Histogram of "horse"](num_athletes_vs_btoom_country.png)
+
+4. **Bipartite Participation Network of Bottom 20 Countries**  
 I was curious about what disciplines athletes attend if their country has very few participants, and whether these smaller athletes attending countries share similarities in sport participation. To explore this, I created a **bipartite network** connecting countries (nodes on one side) to Olympic disciplines (nodes on the other). I filtered the dataset to include only the bottom 20 countries by athlete count. Using the `frame2webs()` and `plotPAC()` functions from the `bipartite` package, I visualized the connections between these countries and their attended disciplines.
 
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
@@ -59,14 +66,14 @@ I was curious about what disciplines athletes attend if their country has very f
 
 I filtered for countries with more than 10 disciplines to focus on active NOCs and scaled edge widths based on the number of shared disciplines. Central countries were highlighted in red to represent top participation breadth.
 
-5. **Athlete–Medal Type Network and Clustering**  
+2. **Country–Country Collaboration Network (Projected 1-mode)**  
+I created a projection of the country–discipline bipartite matrix into a country–country graph using matrix multiplication. Two countries are connected if their athletes competed in at least one shared discipline. I filtered for countries with more than 10 disciplines to focus on active NOCs and scaled edge widths based on the number of shared disciplines. Central countries were highlighted in red to represent top participation breadth.
+
+3. **Athlete–Medal Type Network and Clustering**  
 By creating a bipartite graph between athlete names and medal types, I projected this into a 1-mode network connecting athletes who won the same type of medal. Using `igraph::cluster_louvain()`, I performed community detection to identify clusters of athletes who frequently appear in similar medal categories. This helped uncover discipline-based grouping and medal clustering trends.
 
-6. **Event Collaboration in Athletics**  
+4. **Event Collaboration in Athletics**  
 Focusing on the Athletics discipline, I built an event–event network by projecting a bipartite graph of athletes and events. After splitting multiple events per athlete using `separate_rows()`, I created a network where events are connected if an athlete competed in both. Centrality metrics such as degree, strength, and eigenvector centrality were calculated to find the most structurally important events within the Athletics network.
-
-7. **Barplots of Athlete Representation by Country**  
-I used `ggplot2` to create horizontal bar plots showing the number of athletes from each country. One plot showed the top 20 countries by participation, while another showed the bottom 20. These visualizations provided context for understanding the structure of the collaboration networks and guided decisions about which countries to highlight or combine in later graphs.
 
 Each visualization was paired with interpretation and statistical measures to help reveal broader structural dynamics at the athlete, event, and country levels in the Olympic data.
 
