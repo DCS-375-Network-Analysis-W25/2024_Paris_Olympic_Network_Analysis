@@ -59,7 +59,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Most of the countries share one discipline. Some countries share multiple disciplines. Bhutan and Chad share Archery and Athletics, and Sao Tome and Principe and Chad share Athletics and Judo. Liechtenstein did not share any discipline with any of the other few athletes attending countries, and in fact, PUENTENER Romano was the only athlete attended this Olympic from Liechtenstein and competed in Cycling Mountain Bike. 
 
 4. **Country–Country Collaboration Network (Projected 1-mode)**  
-&nbsp;&nbsp;&nbsp;&nbsp;I created a projection of the country–discipline bipartite matrix into a country–country graph using matrix multiplication. Two countries are connected if their athletes competed in at least one shared discipline. I filtered for countries with more than 10 disciplines to focus on active NOCs and scaled edge widths based on the number of shared disciplines. Central countries were highlighted in red to represent top participation breadth.
+&nbsp;&nbsp;&nbsp;&nbsp;This is the network of countries where if two countries share at least one Olympic discipline, then they have the connections. Edges represent two countries share at least one Olympic discipline (e.g., Swimming, Athletics). Edge weight shows how many disciplines they have in common. Lastly, red nodes shows the top 10 countries by number of disciplines (the most sport-diverse countries)
+
+&nbsp;&nbsp;&nbsp;&nbsp;The red nodes are the most diverse countries — they compete in the largest variety of Olympic disciplines. This suggests that those countries have greater investment in a broad Olympic program, larger delegation sizes, and Well-established athletic infrastructure because of their economic background. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;If two countries are strongly connected (thick edge), they tend to send athletes to the same set of disciplines, even if they’re not top-ranked countries. This may indicate that they have similar sports development priorities, regional sport trends such as Judo in Asia, and shared cultural or funding influences
 
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
