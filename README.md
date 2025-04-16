@@ -18,7 +18,7 @@
 ## 2. Background and Significance
 &nbsp;&nbsp;&nbsp;&nbsp;The Olympic Games are not only a platform for international competition but also a representation of global athletic development and cultural investment in sports. Countries have different numbers of how many athletes they send and what disciplines they participate in. I hypothesized that we can potentially find some deeper patterns about the features of athletic ministries in each country and accessibility.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Network analysis can help us to find out these questions. By building the networks, and visualizing the relationships between athletes, countries, and disciplines as networks, we can explore who are connected, how central certain nodes are, and where clusters of similarity or collaboration might happen. Concepts like bipartite graphs, degree centrality, and community detection, which was learned through **DCS 375 Network Analysis** allow us to map these interactions and quantify research in ways traditional medal counts do not. This project applies those techniques to the 2024 Paris Olympics to better understand the collaborative structure of global athletics.
+&nbsp;&nbsp;&nbsp;&nbsp;Network analysis can help us to find out these questions. By building the networks and visualizing the relationships between athletes, countries, and disciplines as networks, we can explore who are connected, how central certain nodes are, and where clusters of similarity or collaboration might happen. Concepts like bipartite graphs, degree centrality, and community detection, which was learned through **DCS 375 Network Analysis** allow us to map these interactions and quantify research in ways traditional medal counts do not. This project applies those techniques to the 2024 Paris Olympics to better understand the collaborative structure of global athletics.
 
 ## 3. Data and Data Ethics
 &nbsp;&nbsp;&nbsp;&nbsp;Now let’s talk about data. As mentioned in introduction, datasets are from [kaggle.com](https://www.kaggle.com/) and are called `athletes.csv` (all participants) and `medallists.csv` (all medal winners) from [Paris 2024 Olympic Summer Games](https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games?select=medallists.csv). `athletes.csv` contains variables such as `name`, `gender`, `country`, `disciplines`, `events`, `birth date`, `occupation`, `education`, etc.  `medallists.csv` has information about `medal_date`, `medal_type`, `name`, `country`, etc. In the data cleaning phase, I removed special characters such as brackets, quotation marks from `disciplines` and `events` . Also, I created a new dataset that contains only the variables that I plan to use. 
@@ -60,10 +60,7 @@
 
 **Analysis/Observation**: Countries colored in gold (those outside the top 10) tend to cluster little scattered but still maintain dense connectivity. This suggests that even mid-sized Olympic nations share a significant number of disciplines with top countries, likely because of universally accessible sports like Athletics, Judo, and Swimming. This network helps illustrate global sport alignment: countries tend to train and send athletes to similar sets of disciplines, which could reflect global norms in Olympic preparation, shared funding priorities, or mutual access to more accessible disciplines. The visualization also highlights which countries serve as **participation hubs**, structurally linking diverse parts of the Olympic ecosystem.
 
-5. **5 Number Summary**
-
-
-6. **Athlete–Medal Type Network and Clustering (Japan)**  
+5. **Athlete–Medal Type Network and Clustering (Japan)**  
 &nbsp;&nbsp;&nbsp;&nbsp;By creating a bipartite graph between athlete names and medal types, I projected this into a 1-mode network connecting athletes who won the same type of medal. It ended up clustering by themselves because it's connected by what types of medals athteles got. I first started with the entire medalists, and I have colored them to Gold, Silver and Bronze by using the `cluster_louvain` based on the what types medals they have received.
 
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
@@ -72,10 +69,32 @@ Since I am from Japan, just for the curiosity, I have filtered Japan, and did th
 
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
+**Analysis/Observation:**  The global network of medalists reveals clear and strong clustering patterns when athletes are grouped by the type of medal they received. When I filtered only for **Japanese medalists**, I observed similar behavior. Although the scale is smaller, the clustering still reflects the distinction between medal types. Most athletes grouped tightly with others who received the same medal, especially within gold and silver clusters. This suggests that Japanese medalists tend to win medals in groups — possibly from team events, or within strong national programs in particular disciplines such as Judo, Wrestling, and Fencing. One interesting detail we can find in Japanese medalists is OKA Shinnosuke stands out a lot in this clutering. It refers that this athlete has recieved multiple medals, and in fact, he competed in Gymmastics, and recievd 3 Gold medals and 1 Bronze medal. We can observe that he has connections with all the athletes who have recieved Gold or Bronze, but does not have connections with any silver medalists. In the next section, Statistical Analysis of the Japanese medalists will be shown. 
 
-**Analysis/Observation:**  The global network of medalists reveals clear and strong clustering patterns when athletes are grouped by the type of medal they received. When I filtered only for **Japanese medalists**, I observed similar behavior. Although the scale is smaller, the clustering still reflects the distinction between medal types. Most athletes grouped tightly with others who received the same medal, especially within gold and silver clusters. This suggests that Japanese medalists tend to win medals in groups — possibly from team events, or within strong national programs in particular disciplines such as Judo, Wrestling, and Fencing. One interesting detail we can find in Japanese medalists is OKA Shinnosuke stands out a lot in this clutering. It refers that this athlete has recieved multiple medals, and in fact, he competed in Gymmastics, and recievd 3 Gold medals and 1 Bronze medal. We can observe that he has connections with all the athletes who have recieved Gold or Bronze, but does not have connections with any silver medalists. 
+7. **Statistical Analysis**
+&nbsp;&nbsp;&nbsp;&nbsp;Using this Japan medalist network, I have decided to do statistical analysis. I have measured the Edge Density, Transitivity, and Betweenness.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Each visualization was paired with interpretation and statistical measures to help reveal broader structural dynamics at the athlete, event, and country levels in the Olympic data.
+The value of Edge Density measures a overall connectivity of the network using `edge_density()` function, and it is useful for comparing dense versus sparse networks. 
+
+Transitivity measures the local clustering using `transitivity()` function, and it is useful for etecting team cohesion or discipline similarity. The value range is between 0 and 1 and closer to 1 means strong triadic closure (teammates or closely gathered clusters), and closer to 0 means shows that it is linear and disconnected structure.
+
+Betweenness measures the centrality value in the network. `betweenness()` function is used. It is useful for identifying influential nodes, thus in this case is the athlete who have multiple and different types of medals. 
+
+Here are the values of all three Statistical Anlysis: 
+
+| Statistical Analysis Method | Value |
+|-----------------------------|-------|
+| **Edge Density**            | 0.4505176 |
+| **Transitivity**            | 0.8407694 |
+| **Betweenness** (Top 5)     | OKA Shinnosuke – 446.8571<br>TSUNODA Natsumi – 125.5536<br>KANO Koki – 125.5536<br>ABE Hifumi – 125.5536<br>NAGASE Takanori – 125.5536 |
+
+**Analysis/Observation:**  The statistical values show us the depths of Japanese medalist network. The edge density of the netowork was 0.45, and this shows the network has relatively high level of connectivity which many athletes are linked because of the medal kinds. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;The high transitivity score of 0.84 confirms that Japanese medalists has tightly clustered groups. This shows that Japan has won a lot of medals through team events.  such as   &nbsp;&nbsp;&nbsp;&nbsp;Judo, Gymnastics, and Wrestling, thus all those individual medalists who competed in the team events got the same medal type, and they are connected as well.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Among the medalists, OKA Shinnosuke is the key structural figure with the highest betweenness centrality as we discovered from the network visualization. His role as a connector reflects his participation in multiple events and won the medals. Other athletes like TSUNODA Natsumi and ABE Hifumi are influential nodes, which they have participated in the individual events and team events or multiple individual events. These statistics support the visualizations by medal type and explains why the network was formed in that way. 
+
+Thus, from all the visualizations and analysis, 
 
 ## 5. Interpretation & Takeaways
 &nbsp;&nbsp;&nbsp;&nbsp;Through network analysis, I uncovered patterns of Olympic participation and performance that go beyond simple medal counts. Countries with broad representation across disciplines—such as the US, China, and Australia were emerged as central hubs in the global sports network. Smaller nations, though limited in size, still formed meaningful connections through accessible sports like Athletics and Judo.
