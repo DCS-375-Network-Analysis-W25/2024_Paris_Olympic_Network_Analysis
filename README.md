@@ -74,7 +74,7 @@ Since I am from Japan, just for the curiosity, I have filtered Japan, and did th
 **Analysis/Observation:**  The global network of medalists reveals clear and strong clustering patterns when athletes are grouped by the type of medal they received. When I filtered only for **Japanese medalists**, I observed similar behavior. Although the scale is smaller, the clustering still reflects the distinction between medal types. Most athletes grouped tightly with others who received the same medal, especially within gold and silver clusters. This suggests that Japanese medalists tend to win medals in groups — possibly from team events, or within strong national programs in particular disciplines such as Judo, Wrestling, and Fencing. One interesting detail we can find in Japanese medalists is OKA Shinnosuke stands out a lot in this clutering. It refers that this athlete has recieved multiple medals, and in fact, he competed in Gymmastics, and recievd 3 Gold medals and 1 Bronze medal. We can observe that he has connections with all the athletes who have recieved Gold or Bronze, but does not have connections with any silver medalists. In the next section, Statistical Analysis of the Japanese medalists will be shown. 
 
 6. **Statistical Analysis**  
-&nbsp;&nbsp;&nbsp;&nbsp;Using the Japan medalist network, I conducted a statistical analysis by calculating Edge Density, Transitivity, and Betweenness Centrality. This approach follows the framework outlined in *A User’s Guide to Network Analysis in R* by Douglas A. Luke, specifically in *Chapter 2: The Network Analysis "Five-Number Summary"*. These metrics help summarize the structure of a network and identify key nodes and patterns within it.
+&nbsp;&nbsp;&nbsp;&nbsp;Using the Japan medalist network, I conducted a statistical analysis by calculating Edge Density, Transitivity, and Betweenness Centrality. This approach follows the framework outlined in *A User’s Guide to Network Analysis in R* by Douglas A. Luke, specifically in *Chapter 2: The Network Analysis "Five-Number Summary"*. These metrics help summarize the structure of a network and identify key nodes and patterns within it. I have measured the Edge Density, Transitivity, and Betweenness.
 
 The value of Edge Density measures a overall connectivity of the network using `edge_density()` function, and it is useful for comparing dense versus sparse networks. 
 
@@ -103,9 +103,15 @@ Here are the values of all three Statistical Anlysis:
 &nbsp;&nbsp;&nbsp;&nbsp;This project demonstrates how network analysis can reveal the hidden structure of Olympic participation. By modeling relationships between countries, disciplines, and medalists, I was able to uncover patterns of collaboration, specialization, and centrality that aren’t visible in raw data. The analysis highlighted how certain countries dominate through breadth, while others connect through shared sports. Clustering by medal type also showed performance-based communities among athletes. As a student from Japan, exploring my country’s network was personally meaningful. Overall, this project deepened my understanding of network science and showed its power to uncover insights within global systems like the Olympics.
 
 ## 7. Reference: 
-- boyd, d., & Crawford, K. (2011). Six Provocations for Big Data. Oxford Internet Institute.
-- piterfm. (2023). *Paris 2024 Olympic Summer Games*. Kaggle. https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games
-- 
+boyd, d., and Kate Crawford. *Six Provocations for Big Data*. Oxford Internet Institute, 2011.
+
+Dormann, Carsten F. "Using *bipartite* to Describe and Plot Two-Mode Networks in R." *University of Freiburg, Biometry & Environmental System Analysis*, 20 Feb. 2025. Vignette for the *bipartite* R package.
+
+Luke, Douglas A. *A User’s Guide to Network Analysis in R*. Springer, 2015.
+
+piterfm. *Paris 2024 Olympic Summer Games*. Kaggle, 2023, https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games.
+
+
 
 
 
