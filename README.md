@@ -55,6 +55,8 @@ I used `ggplot2` to create horizontal bar plots showing the number of athletes f
 
 ![Histogram of "horse"](num_athletes_vs_bottom_country.png)
 
+**Observations**: I found out that the many developed countries sent many athletes, while other countries that have few populations or small country size have sent less athletes. USA has sent the most athltes to Paris Olympic and had 619 athletes, while Belize, Liechtenstein, Nauru, and Somalia had 1 athlte representing from each country. It is very sad to see how there are massive difference between those countries.
+
 3. **Bipartite Participation Network of Bottom 20 Countries**  
 I was curious about what disciplines athletes attend if their country has very few participants, and whether these smaller athletes attending countries share similarities in sport participation. To explore this, I created a **bipartite network** connecting countries (nodes on one side) to Olympic disciplines (nodes on the other). I filtered the dataset to include only the bottom 20 countries by athlete count. Using the `frame2webs()` and `plotPAC()` functions from the `bipartite` package, I visualized the connections between these countries and their attended disciplines.
 
