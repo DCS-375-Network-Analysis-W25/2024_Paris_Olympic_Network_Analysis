@@ -38,11 +38,17 @@
 After the data cleaning, I applied several network analysis skills learned in the DCS375 course. I have created a bipartite network, unimodal visualizations, projected unipartite network, 1-mode network, and barplot. I have also used statistical analysis for the 1-mode network. Here are methodologies for each visualization.  
 
 1. **Athlete–Country Bipartite Network**  
-Using `frame2webs()` from the `bipartite` package, I constructed a bipartite graph connecting athletes to their respective countries and disciplines. This two-mode network highlights participation patterns across nations. To reduce noise, I grouped countries with 15 or fewer athletes into a collective “Other Countries” node. The `plotweb()` function was used for visualization, with label rotation, node scaling, and color customization to improve clarity.
+Using `frame2webs()` from the `bipartite` package, I constructed a bipartite graph connecting athletes to their respective countries and disciplines. This two-mode network highlights participation patterns across nations. The `plotweb()` function was used for visualization, with label rotation, node scaling, and color customization to improve clarity.
 
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
-3. **Country–Country Collaboration Network (Projected 1-mode)**  
+However I have noticed that we cannot able to see some nodes because they are too small. To reduce noise, I grouped countries with 15 or fewer athletes into a collective “Other Countries” node. 
+
+![Histogram of "horse"](num_athletes_vs_top_country.png)
+
+Observations: We observed that There are many participants in Athletics and Swimmings from many countries. We also see that there are many participants from the countries like US, France, China, Australia, Japan, and Spain. I have also found that there are many countries that have only sent 15 or less athletes because "Other Countries" node is thick. 
+
+3. **Unimodal Projection of the Bottom 20 Atheletes Participating Countries**  
 I created a projection of the country–discipline bipartite matrix into a country–country graph using matrix multiplication. Two countries are connected if their athletes competed in at least one shared discipline. I filtered for countries with more than 10 disciplines to focus on active NOCs and scaled edge widths based on the number of shared disciplines. Central countries were highlighted in red to represent top participation breadth.
 
 4. **Athlete–Medal Type Network and Clustering**  
