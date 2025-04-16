@@ -38,6 +38,7 @@
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
 **Analysis/Observation**:
+
 &nbsp;&nbsp;&nbsp;&nbsp;I observed that There are many participants in Athletics and Swimmings from many countries. We also see that there are many participants from the countries like US, France, China, Australia, Japan, and Spain. I have also found that there are many countries that have only sent 15 or less athletes because "Other Countries" node is thick. 
 
 2. **Barplots of Athlete Representation by Country**  
@@ -48,6 +49,7 @@
 ![Histogram of "horse"](num_athletes_vs_bottom_country.png)
 
 **Analysis/Observation**:
+
 &nbsp;&nbsp;&nbsp;&nbsp;I found out that the many developed countries sent many athletes, while other countries that have few populations or small country size have sent less athletes. USA has sent the most athltes to Paris Olympic and had 619 athletes, while Belize, Liechtenstein, Nauru, and Somalia had 1 athlte representing from each country. It is very sad to see how there are massive difference between those countries.
 
 3. **Bipartite Participation Network of Bottom 20 Countries**  
@@ -58,7 +60,8 @@
 **Analysis/Observation**:
 &nbsp;&nbsp;&nbsp;&nbsp;Most of the countries share one discipline. Some countries share multiple disciplines. Bhutan and Chad share Archery and Athletics, and Sao Tome and Principe and Chad share Athletics and Judo. Liechtenstein did not share any discipline with any of the other few athletes attending countries, and in fact, PUENTENER Romano was the only athlete attended this Olympic from Liechtenstein and competed in Cycling Mountain Bike. 
 
-4. **Country–Country Collaboration Network (Projected 1-mode)**  
+4. **Country–Country Collaboration Network (Projected 1-mode)**
+   
 &nbsp;&nbsp;&nbsp;&nbsp;This is the network of countries where if two countries share at least one Olympic discipline, then they have the connections. Edges represent two countries share at least one Olympic discipline (e.g., Swimming, Athletics). Edge weight shows how many disciplines they have in common. Lastly, red nodes shows the top 10 countries by number of disciplines (the most sport-diverse countries)
 
 &nbsp;&nbsp;&nbsp;&nbsp;The red nodes are the most diverse countries — they compete in the largest variety of Olympic disciplines. This suggests that those countries have greater investment in a broad Olympic program, larger delegation sizes, and Well-established athletic infrastructure because of their economic background. 
@@ -68,6 +71,7 @@
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
 **Analysis/Observation**:
+
 &nbsp;&nbsp;&nbsp;&nbsp;Countries colored in gold (those outside the top 10) tend to cluster little scattered but still maintain dense connectivity. This suggests that even mid-sized Olympic nations share a significant number of disciplines with top countries, likely because of universally accessible sports like Athletics, Judo, and Swimming. This network helps illustrate global sport alignment: countries tend to train and send athletes to similar sets of disciplines, which could reflect global norms in Olympic preparation, shared funding priorities, or mutual access to more accessible disciplines. The visualization also highlights which countries serve as **participation hubs**, structurally linking diverse parts of the Olympic ecosystem.
 
 5. **Athlete–Medal Type Network and Clustering (Japan)**  
@@ -80,6 +84,7 @@ Since I am from Japan, just for the curiosity, I have filtered Japan, and did th
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
 **Analysis/Observation:**  
+
 &nbsp;&nbsp;&nbsp;&nbsp;The global network of medalists reveals clear and strong clustering patterns when athletes are grouped by the type of medal they received. When I filtered only for **Japanese medalists**, I observed similar behavior. Although the scale is smaller, the clustering still reflects the distinction between medal types. Most athletes grouped tightly with others who received the same medal, especially within gold and silver clusters. This suggests that Japanese medalists tend to win medals in groups — possibly from team events, or within strong national programs in particular disciplines such as Judo, Wrestling, and Fencing. One interesting detail we can find in Japanese medalists is OKA Shinnosuke stands out a lot in this clutering. It refers that this athlete has recieved multiple medals, and in fact, he competed in Gymmastics, and recievd 3 Gold medals and 1 Bronze medal. We can observe that he has connections with all the athletes who have recieved Gold or Bronze, but does not have connections with any silver medalists. In the next section, Statistical Analysis of the Japanese medalists will be shown. 
 
 6. **Statistical Analysis**  
@@ -100,6 +105,7 @@ Here are the values of all three Statistical Anlysis:
 | **Betweenness** (Top 5)     | OKA Shinnosuke – 446.8571<br>TSUNODA Natsumi – 125.5536<br>KANO Koki – 125.5536<br>ABE Hifumi – 125.5536<br>NAGASE Takanori – 125.5536 |
 
 **Analysis/Observation:**  
+
 &nbsp;&nbsp;&nbsp;&nbsp;The statistical values show us the depths of Japanese medalist network. The edge density of the netowork was 0.45, and this shows the network has relatively high level of connectivity which many athletes are linked because of the medal kinds. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;The high transitivity score of 0.84 confirms that Japanese medalists has tightly clustered groups. This shows that Japan has won a lot of medals through team events.  such as   &nbsp;&nbsp;&nbsp;&nbsp;Judo, Gymnastics, and Wrestling, thus all those individual medalists who competed in the team events got the same medal type, and they are connected as well.
