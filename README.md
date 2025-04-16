@@ -3,11 +3,9 @@
 #### Jangmin Song  
 #### Professor Carrie Diaz Eaton  
 #### DCS375 Network Analysis  
-#### April 18th 2025  
+#### April 18th, 2025  
 
 ## 1. Introduction  
-200 words
-
 &nbsp;&nbsp;&nbsp;&nbsp;The Summer Olympic Games is the largest international sport event, which is held every four years. There are more than 10,000 athletes from around the world. These athletes train for years to represent their nations on a global stage and compete for excellence in their respective disciplines. In 2024, the Olympics game was held in Paris three years after 2020 Tokyo Olympics that happened in 2021 due to COVID-19 pandemic. There is a dataset in [kaggle.com](https://www.kaggle.com/) called [Paris 2024 Olympic Summer Games](https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games?select=medallists.csv), which contains all the data of Athletes,  They also offer a rich dataset for exploring global athletic participation, collaboration, and structural patterns across countries and disciplines. This project uses network analysis methods to investigate athlete and country relationships based on shared events, medal achievements, and cross-discipline participation. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;The central questions of this project are the follwings:
@@ -18,23 +16,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;I used the language `R` for this project mainly using `bipartite`, `igraph`, and `ggplot2` packages. By visualizing and analyzing these relationships through bipartite graphs, one-mode projections, and centrality metrics, we will find the structural dynamics within the Olympic system that go beyond surface-level competition results.
 
 ## 2. Background and Significance
-100–150 words
-
 &nbsp;&nbsp;&nbsp;&nbsp;The Olympic Games are not only a platform for international competition but also a representation of global athletic development and cultural investment in sports. Countries have different numbers of how many athletes they send and what disciplines they participate in. I hypothesized that we can potentially find some deeper patterns about the features of athletic ministries in each country and accessibility.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Network analysis can help us to find out these questions. By building the networks, and visualizing the relationships between athletes, countries, and disciplines as networks, we can explore who are connected, how central certain nodes are, and where clusters of similarity or collaboration might happen. Concepts like bipartite graphs, degree centrality, and community detection, which was learned through **DCS 375 Network Analysis** allow us to map these interactions and quantify research in ways traditional medal counts do not. This project applies those techniques to the 2024 Paris Olympics to better understand the collaborative structure of global athletics.
 
-
-## 3. Data 
-150–200 words
-
+## 3. Data and Data Ethics
 &nbsp;&nbsp;&nbsp;&nbsp;Now let’s talk about data. As mentioned in introduction, datasets are from [kaggle.com](https://www.kaggle.com/) and are called `athletes.csv` (all participants) and `medallists.csv` (all medal winners) from [Paris 2024 Olympic Summer Games](https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games?select=medallists.csv). `athletes.csv` contains variables such as `name`, `gender`, `country`, `disciplines`, `events`, `birth date`, `occupation`, `education`, etc.  `medallists.csv` has information about `medal_date`, `medal_type`, `name`, `country`, etc. In the data cleaning phase, I removed special characters such as brackets, quotation marks from `disciplines` and `events` . Also, I created a new dataset that contains only the variables that I plan to use. 
 
-&nbsp;&nbsp;&nbsp;&nbsp; After the data cleaning, I applied several network analysis skills learned in the DCS375 course. First, I created several bipartite graphs, countries connected to disciplines, athletes connected to disciplines or events, and athletes connected to medal types (Dormann, 2025). These bipartite networks were projected into one-mode graphs. country–country (shared disciplines), athlete–athlete (shared medals), and event–event (shared athletes). Graph objects were constructed with `igraph::graph_from_adjacency_matrix()` or `graph_from_edgelist()`, and layouts were generated using `layout_with_fr()` for force-directed visualization. Edge weights reflect shared attributes (e.g., number of common disciplines or medal types), and vertex sizes are scaled based on node strength. I also computed centrality measures (degree, strength, eigenvector, betweenness) to analyze which countries, athletes, or events played the most central roles within their respective networks.
-
 ## 4. Methodology, Visualizations, and Analysis/Observation
-250-300 words
-
 &nbsp;&nbsp;&nbsp;&nbsp;After the data cleaning, I applied several network analysis skills learned in the DCS375 course. I have created a bipartite network, unimodal visualizations, projected unipartite network, 1-mode network, and barplot. I have also used statistical analysis for the 1-mode network. Here are methodologies and analysis/observation for each visualization.  
 
 1. **Athlete–Country Bipartite Network**  
@@ -89,8 +78,6 @@ Since I am from Japan, just for the curiosity, I have filtered Japan, and did th
 &nbsp;&nbsp;&nbsp;&nbsp;Each visualization was paired with interpretation and statistical measures to help reveal broader structural dynamics at the athlete, event, and country levels in the Olympic data.
 
 ## 5. Interpretation & Takeaways
-100-150 words
-
 &nbsp;&nbsp;&nbsp;&nbsp;Through network analysis, I uncovered patterns of Olympic participation and performance that go beyond simple medal counts. Countries with broad representation across disciplines—such as the US, China, and Australia were emerged as central hubs in the global sports network. Smaller nations, though limited in size, still formed meaningful connections through accessible sports like Athletics and Judo.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Athlete networks revealed strong clustering by medal type, with gold, silver, and bronze forming distinct communities. In Japan’s case, these clusters were more interconnected, suggesting stronger internal collaboration or shared disciplines among medalists.
@@ -98,8 +85,6 @@ Since I am from Japan, just for the curiosity, I have filtered Japan, and did th
 &nbsp;&nbsp;&nbsp;&nbsp;These visualizations demonstrate how the Olympics reflect not only competition, but structure—how athletes and countries are connected by discipline, performance, and opportunity. Network analysis helped make these relationships visible, offering a richer understanding of the Olympic ecosystem.
 
 ## 6. Conclusion
-100 words
-
 &nbsp;&nbsp;&nbsp;&nbsp;This project demonstrates how network analysis can reveal the hidden structure of Olympic participation. By modeling relationships between countries, disciplines, and medalists, I was able to uncover patterns of collaboration, specialization, and centrality that aren’t visible in raw data. The analysis highlighted how certain countries dominate through breadth, while others connect through shared sports. Clustering by medal type also showed performance-based communities among athletes. As a student from Japan, exploring my country’s network was personally meaningful. Overall, this project deepened my understanding of network science and showed its power to uncover insights within global systems like the Olympics.
 
 
