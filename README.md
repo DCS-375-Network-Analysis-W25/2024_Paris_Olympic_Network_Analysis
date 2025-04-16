@@ -70,12 +70,23 @@ I created a projection of the country–discipline bipartite matrix into a count
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
 **Analysis/Observation**:
+Countries colored in gold (those outside the top 10) tend to cluster little scattered but still maintain dense connectivity. This suggests that even mid-sized Olympic nations share a significant number of disciplines with top countries, likely because of universally accessible sports like Athletics, Judo, and Swimming. This network helps illustrate global sport alignment: countries tend to train and send athletes to similar sets of disciplines, which could reflect global norms in Olympic preparation, shared funding priorities, or mutual access to more accessible disciplines. The visualization also highlights which countries serve as **participation hubs**, structurally linking diverse parts of the Olympic ecosystem.
+
+5. **5 Number Summary**
 
 
-5. **Athlete–Medal Type Network and Clustering (Japan)**  
-By creating a bipartite graph between athlete names and medal types, I projected this into a 1-mode network connecting athletes who won the same type of medal. Using `igraph::cluster_louvain()`, I performed community detection to identify clusters of athletes who frequently appear in similar medal categories. This helped uncover discipline-based grouping and medal clustering trends.
+6. **Athlete–Medal Type Network and Clustering (Japan)**  
+By creating a bipartite graph between athlete names and medal types, I projected this into a 1-mode network connecting athletes who won the same type of medal. It ended up clustering by themselves because it's connected by what types of medals athteles got. I first started with the entire medalists, and I have colored them to Gold, Silver and Bronze by using the `cluster_louvain` based on the what types medals they have received.
+
+![Histogram of "horse"](num_athletes_vs_top_country.png)
+
+Since I am from Japan, just for the curiosity, I have filtered Japan, and did the similar process. 
+
+![Histogram of "horse"](num_athletes_vs_top_country.png)
+
 
 **Analysis/Observation**:
+
 
 
 Each visualization was paired with interpretation and statistical measures to help reveal broader structural dynamics at the athlete, event, and country levels in the Olympic data.
