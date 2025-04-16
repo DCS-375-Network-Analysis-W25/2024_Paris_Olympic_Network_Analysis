@@ -67,3 +67,9 @@ Each visualization was paired with interpretation and statistical measures to he
 
 ## 6. Conclusion
 100 words
+
+## 7. References
+- UGNAR
+- Intro2bipartite
+- Kaggle.com Paris 2024 Olympic Summer Games
+- One paper about this olympic
