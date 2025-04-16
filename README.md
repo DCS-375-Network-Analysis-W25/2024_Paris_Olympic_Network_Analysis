@@ -107,9 +107,10 @@ boyd, d., and Kate Crawford. *Six Provocations for Big Data*. Oxford Internet In
 
 Dormann, Carsten F. "Using *bipartite* to Describe and Plot Two-Mode Networks in R." *University of Freiburg, Biometry & Environmental System Analysis*, 20 Feb. 2025. Vignette for the *bipartite* R package.
 
+Giliberti, Francesco. *Unveiling the Numbers: Fascinating Data Insights from the 2024 Olympics*. Springer, 2024, https://medium.com/@gilipalo/unveiling-the-numbers-fascinating-data-insights-from-the-2024-olympics-d839060db060. 
+
 Luke, Douglas A. *A User’s Guide to Network Analysis in R*. Springer, 2015.
 
 piterfm. *Paris 2024 Olympic Summer Games*. Kaggle, 2023, https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games.
 
-Giliberti, Francesco. *Unveiling the Numbers: Fascinating Data Insights from the 2024 Olympics*. Springer, 2024, https://medium.com/@gilipalo/unveiling-the-numbers-fascinating-data-insights-from-the-2024-olympics-d839060db060. 
 
