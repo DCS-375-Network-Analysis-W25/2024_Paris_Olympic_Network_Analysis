@@ -58,6 +58,7 @@
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
 
 **Analysis/Observation**:
+
 &nbsp;&nbsp;&nbsp;&nbsp;Most of the countries share one discipline. Some countries share multiple disciplines. Bhutan and Chad share Archery and Athletics, and Sao Tome and Principe and Chad share Athletics and Judo. Liechtenstein did not share any discipline with any of the other few athletes attending countries, and in fact, PUENTENER Romano was the only athlete attended this Olympic from Liechtenstein and competed in Cycling Mountain Bike. 
 
 4. **Country–Country Collaboration Network (Projected 1-mode)**
