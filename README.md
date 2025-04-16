@@ -55,9 +55,7 @@ I used `ggplot2` to create horizontal bar plots showing the number of athletes f
 
 ![Histogram of "horse"](num_athletes_vs_bottom_country.png)
 
-
-
-4. **Bipartite Participation Network of Bottom 20 Countries**  
+3. **Bipartite Participation Network of Bottom 20 Countries**  
 I was curious about what disciplines athletes attend if their country has very few participants, and whether these smaller athletes attending countries share similarities in sport participation. To explore this, I created a **bipartite network** connecting countries (nodes on one side) to Olympic disciplines (nodes on the other). I filtered the dataset to include only the bottom 20 countries by athlete count. Using the `frame2webs()` and `plotPAC()` functions from the `bipartite` package, I visualized the connections between these countries and their attended disciplines.
 
 ![Histogram of "horse"](num_athletes_vs_top_country.png)
