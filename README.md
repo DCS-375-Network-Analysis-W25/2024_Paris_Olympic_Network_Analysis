@@ -10,7 +10,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;The central questions of this project are the follwings:
 - How are athletes socially connected through shared Olympic disciplines and events?
-- Which countries act as central hubs in the global sports network?
+- Which countries act as central nodes in the global sports network?
 - Do certain disciplines foster more interconnection between athletes or countries?
 
 &nbsp;&nbsp;&nbsp;&nbsp;I used the language `R` for this project mainly using `bipartite`, `igraph`, and `ggplot2` packages. By visualizing and analyzing these relationships through bipartite graphs, one-mode projections, and centrality metrics, we will find the structural dynamics within the Olympic system that go beyond surface-level competition results.
@@ -76,7 +76,7 @@
 
 **Analysis/Observation**:
 
-&nbsp;&nbsp;&nbsp;&nbsp;Countries colored in gold (those outside the top 10) tend to cluster little scattered but still maintain dense connectivity. This suggests that even mid-sized Olympic nations share a significant number of disciplines with top countries, likely because of universally accessible sports like Athletics, Judo, and Swimming. This network helps illustrate global sport alignment: countries tend to train and send athletes to similar sets of disciplines, which could reflect global norms in Olympic preparation, shared funding priorities, or mutual access to more accessible disciplines. The visualization also highlights which countries serve as **participation hubs**, structurally linking diverse parts of the Olympic ecosystem.
+&nbsp;&nbsp;&nbsp;&nbsp;Countries colored in gold (those outside the top 10) tend to cluster little scattered but still maintain dense connectivity. This suggests that even mid-sized Olympic nations share a significant number of disciplines with top countries, likely because of universally accessible sports like Athletics, Judo, and Swimming. This network helps illustrate global sport alignment: countries tend to train and send athletes to similar sets of disciplines, which could reflect global norms in Olympic preparation, shared funding priorities, or mutual access to more accessible disciplines. The visualization also highlights which countries serve as participation nodes, structurally linking diverse parts of the Olympic ecosystem.
 
 5. **Athlete–Medal Type Network and Clustering (Japan)**
    
