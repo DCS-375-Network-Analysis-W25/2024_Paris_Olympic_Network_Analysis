@@ -80,7 +80,7 @@
 
 5. **Athlete–Medal Type Network and Clustering (Japan)**
    
-&nbsp;&nbsp;&nbsp;&nbsp;By creating a bipartite graph between athlete names and medal types, I projected this into a 1-mode network connecting athletes who won the same type of medal. It ended up clustering by themselves because it's connected by what types of medals athteles got. I first started with the entire medalists, and I have colored them to Gold, Silver and Bronze by using the `cluster_louvain` based on the what types medals they have received.
+&nbsp;&nbsp;&nbsp;&nbsp;By creating a bipartite graph between athlete names and medal types, I projected this into a 1-mode network connecting athletes who won the same type of medal. It ended up clustering by themselves because it's connected by what types of medals athteles got. I first started with the entire medalists, and I have colored them to Gold, Silver and Bronze by using the `cluster_louvain` based on the what types medals they have received. The gold nodes shows the gold medal, grey nodes represents silver, and dark green represents bronze.
 
 ![Network graph showing medalist clustering by medal type, such as gold, silver, and bronze. Athletes are grouped based on the kind of medal they received.](img/medalist_cluster.png)
 
