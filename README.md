@@ -36,7 +36,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;However, I have noticed that we cannot able to see some nodes because they are too small. To reduce noise, I grouped countries with 15 or fewer athletes into a collective “Other Countries” node. 
 
-![Simplified bipartite network where countries with 15 or fewer athletes are grouped into an ‘Other Countries’ node to reduce visual clutter.](simple_athlete_country_bipartite.png)
+![Simplified bipartite network where countries with 15 or fewer athletes are grouped into an ‘Other Countries’ node to reduce visual clutter.](img/simple_athlete_country_bipartite.png)
 
 **Analysis/Observation**:
 
