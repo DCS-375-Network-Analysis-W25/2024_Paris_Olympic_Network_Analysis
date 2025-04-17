@@ -8,7 +8,7 @@
 ## 1. Introduction  
 &nbsp;&nbsp;&nbsp;&nbsp;The Summer Olympic Games is the largest international sport event, which is held every four years. There are more than 10,000 athletes from around the world participate in this event. These athletes train for years to represent their nations on a global stage and compete for excellence in their respective disciplines. In 2024, the Olympics game was held in Paris three years after 2020 Tokyo Olympics that happened in 2021 due to COVID-19 pandemic. I was reading through this called [Unveiling the Numbers: Fascinating Data Insights from the 2024 Olympics](https://medium.com/@gilipalo/unveiling-the-numbers-fascinating-data-insights-from-the-2024-olympics-d839060db060) by [Francesco Giliberti](https://medium.com/@gilipalo), and this made me interested in doing a Network Analysis about 2024 Paris Olympics. In the article, the author mentioned about the a dataset in [kaggle.com](https://www.kaggle.com/) called [Paris 2024 Olympic Summer Games](https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games?select=medallists.csv), which contains all the data of athletes and medaliests, thus I also decided to use this dataset. The dataset can be used for exploring global athletic participation, collaboration, and structural patterns across countries and disciplines. My project uses network analysis methods to investigate athlete and country relationships based on shared events, medal achievements, and cross-discipline participation. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;The central questions of this project are the follwings:
+&nbsp;&nbsp;&nbsp;&nbsp;The central questions of this project are the followings:
 - How are athletes socially connected through shared Olympic disciplines and events?
 - Which countries act as central nodes in the global sports network?
 - Do certain disciplines foster more interconnection between athletes or countries?
@@ -66,17 +66,15 @@
 
 4. **Country–Country Collaboration Network (Projected 1-mode)**
    
-&nbsp;&nbsp;&nbsp;&nbsp;This is the network of countries where if two countries share at least one Olympic discipline, then they have the connections. I only included the countries that have participated more than 15 disciplines to keep the visualization simple. Edges represent two countries share at least one Olympic discipline (e.g., Swimming, Athletics). Edge weight shows how many disciplines they have in common. Lastly, red nodes shows the top 10 countries by number of disciplines (the most sport-diverse countries)
+&nbsp;&nbsp;&nbsp;&nbsp;This is the network of countries where if two countries share at least one Olympic discipline, then they have the connections. I only included the countries that have participated more than 15 disciplines to keep the visualization simple. Edges represent two countries share at least one Olympic discipline such as Swimming and Athletics. Edge weight shows how many disciplines they have in common. Lastly, red nodes shows the top 10 countries by number of disciplines, which means that they are the most sport diverse countries. This suggests that those countries have greater investment in a broad Olympic program, larger delegation sizes, and well established athletic infrastructure because of their economic background. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;The red nodes are the most diverse countries — they compete in the largest variety of Olympic disciplines. This suggests that those countries have greater investment in a broad Olympic program, larger delegation sizes, and Well-established athletic infrastructure because of their economic background. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;If two countries are strongly connected (thick edge), they tend to send athletes to the same set of disciplines, even if they’re not top-ranked countries. This may indicate that they have similar sports development priorities, regional sport trends such as Judo in Asia, and shared cultural or funding influences
+&nbsp;&nbsp;&nbsp;&nbsp;If two countries are strongly connected (thick edge), they tend to send athletes to the same set of disciplines, even if they’re not top ranked countries. This may indicate that they have similar sports development priorities, regional sport trends such as Judo in Asia, and shared cultural or funding influences.
 
 ![Projected one mode country network based on shared Olympic disciplines. Countries are connected if their athletes participated in the same disciplines. Top 10 most active countries are highlighted in red and this shows the high connectivity](img/top10_country_collaboration_network.png)
 
 **Analysis/Observation**:
 
-&nbsp;&nbsp;&nbsp;&nbsp;Countries colored in gold (those outside the top 10) tend to cluster little scattered but still maintain dense connectivity. This suggests that even mid-sized Olympic nations share a significant number of disciplines with top countries, likely because of universally accessible sports like Athletics, Judo, and Swimming. This network helps illustrate global sport alignment: countries tend to train and send athletes to similar sets of disciplines, which could reflect global norms in Olympic preparation, shared funding priorities, or mutual access to more accessible disciplines. The visualization also highlights which countries serve as participation nodes, structurally linking diverse parts of the Olympic ecosystem.
+&nbsp;&nbsp;&nbsp;&nbsp;Countries colored in gold (outside the top 10) tend to cluster little scattered but still maintain dense connectivity. This suggests that even midsized countries share a many number of disciplines with top countries, maybe because sports like Athletics, Judo, and Swimming are accessible easilly. 
 
 5. **Athlete–Medal Type Network and Clustering (Japan)**
    
@@ -102,7 +100,7 @@ Transitivity measures the local clustering using `transitivity()` function, and 
 
 Betweenness measures the centrality value in the network. `betweenness()` function is used. It is useful for identifying influential nodes, thus in this case is the athlete who have multiple and different types of medals. 
 
-Here are the values of all three Statistical Anlysis: 
+Here are the values of all three Statistical Analysis: 
 
 | Statistical Analysis Method | Value |
 |-----------------------------|-------|
