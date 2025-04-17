@@ -46,7 +46,7 @@
    
 &nbsp;&nbsp;&nbsp;&nbsp;I used `ggplot2` to create horizontal bar plots showing the number of athletes from each country. One plot showed the top 20 countries by participation, while another showed the bottom 20. These visualizations provided context for understanding the structure of the collaboration networks and guided decisions about which countries to highlight or combine in later graphs.
 
-![Bar chart showing the top 20 countries with the highest number of athletes. Shows countries like the U.S., China, and France as top participants.](num_athletes_vs_top_country.png)
+![Bar chart showing the top 20 countries with the highest number of athletes. Shows countries like the United States, China, and France as top participants.](num_athletes_vs_top_country.png)
 
 ![Bar chart showing the bottom 20 countries by number of athletes sent to the Olympics. Countries with only one, two, or three representatives are included.](num_athletes_vs_bottom_country.png)
 
