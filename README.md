@@ -28,34 +28,37 @@
 ## 4. Methodology, Visualizations, and Analysis/Observation
 &nbsp;&nbsp;&nbsp;&nbsp;After the data cleaning, I applied several network analysis skills learned in the DCS375 course. I have created a bipartite network, unimodal visualizations, projected unipartite network, 1-mode network, and barplot. I have also used statistical analysis for the 1-mode network. Here are methodologies and analysis/observation for each visualization.  
 
-1. **Athlete–Country Bipartite Network**  
+1. **Athlete–Country Bipartite Network**
+   
 &nbsp;&nbsp;&nbsp;&nbsp;Using `frame2webs()` from the `bipartite` package, I constructed a bipartite graph connecting athletes to their respective countries and disciplines. This two-mode network highlights participation patterns across nations. The `plotweb()` function was used for visualization, with label rotation, node scaling, and color customization to improve clarity. This approach follows the framework outlined in *Using bipartite to describe and plot two-mode networks in R* by Carsten F. Dormann, specifically in *Chapter 4: Visualising bipartite networks* (Dormann). Here is the bipartite graph of countries and disciplines. 
 
-![Histogram of "horse"](num_athletes_vs_top_country.png)
+![Bipartite network graph showing athletes connected to their countries and disciplines. Countries with more participants appear more central and connected.](num_athletes_vs_top_country.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;However, I have noticed that we cannot able to see some nodes because they are too small. To reduce noise, I grouped countries with 15 or fewer athletes into a collective “Other Countries” node. 
 
-![Histogram of "horse"](num_athletes_vs_top_country.png)
+![Simplified bipartite network where countries with 15 or fewer athletes are grouped into an ‘Other Countries’ node to reduce visual clutter.](num_athletes_vs_top_country.png)
 
 **Analysis/Observation**:
 
 &nbsp;&nbsp;&nbsp;&nbsp;I observed that There are many participants in Athletics and Swimmings from many countries. We also see that there are many participants from the countries like US, France, China, Australia, Japan, and Spain. I have also found that there are many countries that have only sent 15 or less athletes because "Other Countries" node is thick. 
 
-2. **Barplots of Athlete Representation by Country**  
+2. **Barplots of Athlete Representation by Country**
+   
 &nbsp;&nbsp;&nbsp;&nbsp;I used `ggplot2` to create horizontal bar plots showing the number of athletes from each country. One plot showed the top 20 countries by participation, while another showed the bottom 20. These visualizations provided context for understanding the structure of the collaboration networks and guided decisions about which countries to highlight or combine in later graphs.
 
-![Histogram of "horse"](num_athletes_vs_top_country.png)
+![Bar chart showing the top 20 countries with the highest number of athletes. Shows countries like the U.S., China, and France as top participants.](num_athletes_vs_top_country.png)
 
-![Histogram of "horse"](num_athletes_vs_bottom_country.png)
+![Bar chart showing the bottom 20 countries by number of athletes sent to the Olympics. Countries with only one, two, or three representatives are included.](num_athletes_vs_bottom_country.png)
 
 **Analysis/Observation**:
 
 &nbsp;&nbsp;&nbsp;&nbsp;I found out that the many developed countries sent many athletes, while other countries that have few populations or small country size have sent less athletes. USA has sent the most athltes to Paris Olympic and had 619 athletes, while Belize, Liechtenstein, Nauru, and Somalia had 1 athlte representing from each country. It is very sad to see how there are massive difference between those countries.
 
-3. **Bipartite Participation Network of Bottom 20 Countries**  
+3. **Bipartite Participation Network of Bottom 20 Countries**
+   
 &nbsp;&nbsp;&nbsp;&nbsp;I was curious about what disciplines athletes attend if their country has very few participants, and whether these smaller athletes attending countries share similarities in sport participation. To explore this, using the filtered data from the previous section, I created a **bipartite network** connecting countries (nodes on one side) to Olympic disciplines (nodes on the other). I filtered the dataset to include only the bottom 20 countries by athlete count. Using the `frame2webs()` and `plotPAC()` functions from the `bipartite` package, I visualized the connections between these countries and their attended disciplines. 
 
-![Histogram of "horse"](num_athletes_vs_top_country.png)
+![PAC network showing connections between the bottom 20 countries by number of athletes and the disciplines they participated in. It shows overlapping disciplines among smaller delegations.](num_athletes_vs_top_country.png)
 
 **Analysis/Observation**:
 
@@ -63,32 +66,34 @@
 
 4. **Country–Country Collaboration Network (Projected 1-mode)**
    
-&nbsp;&nbsp;&nbsp;&nbsp;This is the network of countries where if two countries share at least one Olympic discipline, then they have the connections. Edges represent two countries share at least one Olympic discipline (e.g., Swimming, Athletics). Edge weight shows how many disciplines they have in common. Lastly, red nodes shows the top 10 countries by number of disciplines (the most sport-diverse countries)
+&nbsp;&nbsp;&nbsp;&nbsp;This is the network of countries where if two countries share at least one Olympic discipline, then they have the connections. I only included the countries that have participated more than 15 disciplines to keep the visualization simple. Edges represent two countries share at least one Olympic discipline (e.g., Swimming, Athletics). Edge weight shows how many disciplines they have in common. Lastly, red nodes shows the top 10 countries by number of disciplines (the most sport-diverse countries)
 
 &nbsp;&nbsp;&nbsp;&nbsp;The red nodes are the most diverse countries — they compete in the largest variety of Olympic disciplines. This suggests that those countries have greater investment in a broad Olympic program, larger delegation sizes, and Well-established athletic infrastructure because of their economic background. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;If two countries are strongly connected (thick edge), they tend to send athletes to the same set of disciplines, even if they’re not top-ranked countries. This may indicate that they have similar sports development priorities, regional sport trends such as Judo in Asia, and shared cultural or funding influences
 
-![Histogram of "horse"](num_athletes_vs_top_country.png)
+![Projected one mode country network based on shared Olympic disciplines. Countries are connected if their athletes participated in the same disciplines. Top 10 most active countries are highlighted in red and this shows the high connectivity](num_athletes_vs_top_country.png)
 
 **Analysis/Observation**:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Countries colored in gold (those outside the top 10) tend to cluster little scattered but still maintain dense connectivity. This suggests that even mid-sized Olympic nations share a significant number of disciplines with top countries, likely because of universally accessible sports like Athletics, Judo, and Swimming. This network helps illustrate global sport alignment: countries tend to train and send athletes to similar sets of disciplines, which could reflect global norms in Olympic preparation, shared funding priorities, or mutual access to more accessible disciplines. The visualization also highlights which countries serve as **participation hubs**, structurally linking diverse parts of the Olympic ecosystem.
 
-5. **Athlete–Medal Type Network and Clustering (Japan)**  
+5. **Athlete–Medal Type Network and Clustering (Japan)**
+   
 &nbsp;&nbsp;&nbsp;&nbsp;By creating a bipartite graph between athlete names and medal types, I projected this into a 1-mode network connecting athletes who won the same type of medal. It ended up clustering by themselves because it's connected by what types of medals athteles got. I first started with the entire medalists, and I have colored them to Gold, Silver and Bronze by using the `cluster_louvain` based on the what types medals they have received.
 
-![Histogram of "horse"](num_athletes_vs_top_country.png)
+![Network graph showing medalist clustering by medal type, such as gold, silver, and bronze. Athletes are grouped based on the kind of medal they received.](num_athletes_vs_top_country.png)
 
 Since I am from Japan, just for the curiosity, I have filtered Japan, and did the similar process. 
 
-![Histogram of "horse"](num_athletes_vs_top_country.png)
+![Japanese medalist network colored by medal type. Includes tight clustering of athletes with similar medal results, and Oka Shinnosuke as a central connecting node.](num_athletes_vs_top_country.png)
 
 **Analysis/Observation:**  
 
 &nbsp;&nbsp;&nbsp;&nbsp;The global network of medalists reveals clear and strong clustering patterns when athletes are grouped by the type of medal they received. When I filtered only for **Japanese medalists**, I observed similar behavior. Although the scale is smaller, the clustering still reflects the distinction between medal types. Most athletes grouped tightly with others who received the same medal, especially within gold and silver clusters. This suggests that Japanese medalists tend to win medals in groups — possibly from team events, or within strong national programs in particular disciplines such as Judo, Wrestling, and Fencing. One interesting detail we can find in Japanese medalists is OKA Shinnosuke stands out a lot in this clutering. It refers that this athlete has recieved multiple medals, and in fact, he competed in Gymmastics, and recievd 3 Gold medals and 1 Bronze medal. We can observe that he has connections with all the athletes who have recieved Gold or Bronze, but does not have connections with any silver medalists. In the next section, Statistical Analysis of the Japanese medalists will be shown. 
 
-6. **Statistical Analysis**  
+6. **Statistical Analysis**
+   
 &nbsp;&nbsp;&nbsp;&nbsp;Using the Japan medalist network, I conducted a statistical analysis by calculating Edge Density, Transitivity, and Betweenness Centrality. This approach follows the framework outlined in *A User’s Guide to Network Analysis in R* by Douglas A. Luke, specifically in *Chapter 2: The Network Analysis "Five-Number Summary"*. These metrics help summarize the structure of a network and identify key nodes and patterns within it. I have measured the Edge Density, Transitivity, and Betweenness.
 
 The value of Edge Density measures a overall connectivity of the network using `edge_density()` function, and it is useful for comparing dense versus sparse networks. 
